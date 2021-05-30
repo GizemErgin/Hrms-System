@@ -7,32 +7,33 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import kodlamaio.hrms.entities.abstracts.user;
-import lombok.AllArgsConstructor;
+import kodlamaio.hrms.entities.abstracts.User;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="systemstaffs")
+@Table(name="employers")
 @Data
 @EqualsAndHashCode(callSuper=false)
 
-public class systemstaff extends user{
-
+public class Employer extends User{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="nationalId")
-	private int nationalId;
+	@Column(name="companyName")
+	private String companyName;
 	
-	@Column(name="firstName")
-	private String firstName;
+	@Column(name="phoneNumber")
+	private String phoneNumber;
 	
-	@Column(name="lastName")
-	private String lastName;
-
+	@Column(name="website")
+	private String website;
+	
+	@Column(name="hrms_verification")
+	private boolean hrms_verification;
+	
 }

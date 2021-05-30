@@ -17,7 +17,7 @@ import lombok.Data;
 @Inheritance(strategy = InheritanceType.JOINED)
 
 
-public abstract class user {
+public abstract class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

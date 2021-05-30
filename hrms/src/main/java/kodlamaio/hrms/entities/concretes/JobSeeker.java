@@ -1,5 +1,7 @@
 package kodlamaio.hrms.entities.concretes;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,33 +9,36 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import kodlamaio.hrms.entities.abstracts.user;
+import kodlamaio.hrms.entities.abstracts.User;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Entity
-@Table(name="employers")
+@Table(name="jobseekers")
 @Data
 @EqualsAndHashCode(callSuper=false)
 
-public class employer extends user{
-	
+public class JobSeeker extends User{
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="companyName")
-	private String companyName;
+	@Column(name="jobTitleId")
+	private int jobTitleId;
 	
-	@Column(name="phoneNumber")
-	private String phoneNumber;
+	@Column(name="firstName")
+	private String firstName;
 	
-	@Column(name="website")
-	private String website;
+	@Column(name="lastName")
+	private String lastName;
 	
-	@Column(name="hrms_verification")
-	private boolean hrms_verification;
+	@Column(name="nationalId")
+	private String nationalId;
+	
+	@Column(name="birthday")
+	private LocalDate birthday;
 	
 }
