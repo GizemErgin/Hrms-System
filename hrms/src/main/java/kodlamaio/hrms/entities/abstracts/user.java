@@ -31,6 +31,9 @@ public abstract class user {
 	@Column(name="password")
 	private String password;
 	
+	@Column(name="password_repaet")
+	private String password_repaet;
+	
 	@Column(name="email_verification")
 	private boolean email_verification;
 	
