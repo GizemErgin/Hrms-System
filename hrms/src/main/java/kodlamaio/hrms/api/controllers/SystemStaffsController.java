@@ -18,11 +18,12 @@ public class SystemStaffsController {
 
 	@Autowired
 	public SystemStaffsController(SystemStaffService systemStaffService) {
+		super();
 		this.systemStaffService = systemStaffService;
 	}
 
 	@GetMapping("/getall")
 	public List<SystemStaff> getAll(){
-		return systemStaffService.getAll();
+		return this.systemStaffService.getAll();
 	}
 }

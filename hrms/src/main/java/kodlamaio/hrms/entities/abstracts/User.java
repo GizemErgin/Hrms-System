@@ -9,20 +9,23 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="users")
 @Data
 @Inheritance(strategy = InheritanceType.JOINED)
+@NoArgsConstructor
+@AllArgsConstructor
 
 
 public abstract class User {
 
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-	@Column(name="userId")
+	@Column(name="user_id")
 	private int userId;
 	
 	@Column(name="email")
@@ -31,8 +34,8 @@ public abstract class User {
 	@Column(name="password")
 	private String password;
 	
-	@Column(name="password_repaet")
-	private String password_repaet;
+	@Column(name="password_repeat")
+	private String password_repeat;
 	
 	@Column(name="email_verification")
 	private boolean email_verification;

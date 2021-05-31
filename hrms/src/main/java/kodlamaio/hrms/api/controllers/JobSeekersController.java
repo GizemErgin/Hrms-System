@@ -19,12 +19,13 @@ public class JobSeekersController {
 
 	@Autowired
 	public JobSeekersController(JobSeekerService jobSeekerService) {
+		super();
 		this.jobSeekerService = jobSeekerService;
 	}
 	
 	@GetMapping("/getall")
 	public List<JobSeeker> getAll(){
-		return jobSeekerService.getAll();
+		return this.jobSeekerService.getAll();
 	}
 	
 	

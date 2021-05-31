@@ -18,11 +18,12 @@ public class UsersController {
 
 	@Autowired
 	public UsersController(UserService userService) {
+		super();
 		this.userService = userService;
 	}
 	
 	@GetMapping("/getall")
 	public List<User> getAll(){
-		return userService.getAll();
+		return this.userService.getAll();
 	}
 }

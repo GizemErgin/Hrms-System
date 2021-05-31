@@ -12,10 +12,11 @@ import kodlamaio.hrms.entities.concretes.JobSeeker;
 @Service
 public class JobSeekerManager implements JobSeekerService {
 
-	JobSeekerDao jobSeekerDao;
+	private JobSeekerDao jobSeekerDao;
 	
 	@Autowired
 	public JobSeekerManager(JobSeekerDao jobSeekerDao) {
+		super();
 		this.jobSeekerDao = jobSeekerDao;
 	}
 
@@ -39,7 +40,7 @@ public class JobSeekerManager implements JobSeekerService {
 
 	@Override
 	public List<JobSeeker> getAll() {
-		return jobSeekerDao.findAll();
+		return this.jobSeekerDao.findAll();
 	}
 
 }

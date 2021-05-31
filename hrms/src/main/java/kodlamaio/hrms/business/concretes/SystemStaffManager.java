@@ -12,10 +12,11 @@ import kodlamaio.hrms.entities.concretes.SystemStaff;
 @Service
 public class SystemStaffManager implements SystemStaffService{
 
-	SystemStaffDao systemStaffDao;
+	private SystemStaffDao systemStaffDao;
 	
 	@Autowired
 	public SystemStaffManager(SystemStaffDao systemStaffDao) {
+		super();
 		this.systemStaffDao = systemStaffDao;
 	}
 
@@ -39,7 +40,7 @@ public class SystemStaffManager implements SystemStaffService{
 
 	@Override
 	public List<SystemStaff> getAll() {
-		return systemStaffDao.findAll();
+		return this.systemStaffDao.findAll();
 	}
 
 }

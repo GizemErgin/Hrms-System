@@ -12,10 +12,11 @@ import kodlamaio.hrms.entities.abstracts.User;
 @Service
 public class UserManager implements UserService{
 
-	UserDao userDao;
+	private UserDao userDao;
 	
 	@Autowired
 	public UserManager(UserDao userDao) {
+		super();
 		this.userDao = userDao;
 	}
 
@@ -39,7 +40,7 @@ public class UserManager implements UserService{
 
 	@Override
 	public List<User> getAll() {
-		return userDao.findAll();
+		return this.userDao.findAll();
 	}
 
 }

@@ -18,12 +18,13 @@ public class EmployersController {
 
 	@Autowired
 	public EmployersController(EmployerService employerService) {
+		super();
 		this.employerService = employerService;
 	}
 	
 	@GetMapping("/getall")
 	public List<Employer> getAll(){
-		return employerService.getAll();
+		return this.employerService.getAll();
 	}
 	
 	
